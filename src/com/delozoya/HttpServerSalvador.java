@@ -4,6 +4,7 @@ import com.sun.net.httpserver.HttpContext;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
+import com.sun.org.apache.bcel.internal.generic.FLOAD;
 
 import java.io.*;
 import java.net.InetSocketAddress;
@@ -16,6 +17,19 @@ import java.util.Map;
 
 public class HttpServerSalvador {
 
+    static float t1;
+    static float t2;
+    static float t3;
+    static float t4;
+    static float t5;
+    static float t6;
+    static float t7;
+    static float t8;
+    static float t9;
+    static float t10;
+    static float t11;
+    static float t12;
+    static float t13;
     public static void main(String[] args) {
 	// write your code here
         try {
@@ -36,9 +50,9 @@ public class HttpServerSalvador {
             try{
                 InputStream in = t.getRequestBody();
                 //String response = ;
-                t.sendResponseHeaders(200,createWeb(1,1,85,1,1,1,1,1,1,1,1,1,1).length());
+                t.sendResponseHeaders(200,createWeb(t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13).length());
                 OutputStream out = t.getResponseBody();
-                out.write(createWeb(1,1,85,1,1,1,1,1,1,1,1,1,1).getBytes());
+                out.write(createWeb(t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13).getBytes());
                 out.close();
             } catch (Exception e){
                 System.out.println("Error: "+e);
@@ -65,7 +79,63 @@ public class HttpServerSalvador {
                 he.sendResponseHeaders(200, response.length());
                 OutputStream os = he.getResponseBody();
                 os.write(response.toString().getBytes());
-                System.out.println(response.toString());
+                //System.out.println(response.toString());
+                String s =response.toString().substring(0,3);
+                //System.out.println(s.toString());
+                switch(s) {
+                    case "t1 ":
+                        System.out.println("t1 es "+response.toString().substring(4));
+                        t1 = Float.parseFloat(response.toString().substring(4));
+                        break;
+                    case "t2 ":
+                        //System.out.println("t2 es "+response.toString().substring(4));
+                        t2 = Float.parseFloat(response.toString().substring(4));
+                        break;
+                    case "t3 ":
+                        //System.out.println("t1 es "+response.toString().substring(4));
+                        t3 = Float.parseFloat(response.toString().substring(4));
+                        break;
+                    case "t4 ":
+                        //System.out.println("t2 es "+response.toString().substring(4));
+                        t4 = Float.parseFloat(response.toString().substring(4));
+                        break;
+                    case "t5 ":
+                        //System.out.println("t1 es "+response.toString().substring(4));
+                        t5 = Float.parseFloat(response.toString().substring(4));
+                        break;
+                    case "t6 ":
+                        //System.out.println("t2 es "+response.toString().substring(4));
+                        t6 = Float.parseFloat(response.toString().substring(4));
+                        break;
+                    case "t7 ":
+                        //System.out.println("t1 es "+response.toString().substring(4));
+                        t7 = Float.parseFloat(response.toString().substring(4));
+                        break;
+                    case "t8 ":
+                        //System.out.println("t2 es "+response.toString().substring(4));
+                        t8 = Float.parseFloat(response.toString().substring(4));
+                        break;
+                    case "t9 ":
+                        //System.out.println("t1 es "+response.toString().substring(4));
+                        t9 = Float.parseFloat(response.toString().substring(4));
+                        break;
+                    case "t10":
+                        //System.out.println("t2 es "+response.toString().substring(5));
+                        t10 = Float.parseFloat(response.toString().substring(5));
+                        break;
+                    case "t11":
+                        //System.out.println("t1 es "+response.toString().substring(5));
+                        t11 = Float.parseFloat(response.toString().substring(5));
+                        break;
+                    case "t12":
+                        //System.out.println("t2 es "+response.toString().substring(5));
+                        t12 = Float.parseFloat(response.toString().substring(5));
+                        break;
+                    case "t13":
+                        //System.out.println("t2 es "+response.toString().substring(5));
+                        t13 = Float.parseFloat(response.toString().substring(5));
+                        break;
+                }
                 os.close();
             } catch (Exception e) {
                 System.out.println("Error: " + e);
