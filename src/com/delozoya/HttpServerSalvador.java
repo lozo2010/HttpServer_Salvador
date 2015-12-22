@@ -17,19 +17,43 @@ import java.util.Map;
 
 public class HttpServerSalvador {
 
-    static float t1;
-    static float t2;
-    static float t3;
-    static float t4;
-    static float t5;
-    static float t6;
-    static float t7;
-    static float t8;
-    static float t9;
-    static float t10;
-    static float t11;
-    static float t12;
-    static float t13;
+    static int t1;
+    static int t2;
+    static int t3;
+    static int t4;
+    static int t5;
+    static int t6;
+    static int t7;
+    static int t8;
+    static int t9;
+    static int t10;
+    static int t11;
+    static int t12;
+    static int t13;
+    static int b1;
+    static int b2;
+    static int b3;
+    static int b4;
+    static int b5;
+
+    static int v31;
+    static int v32;
+    static int v33;
+    static int v34;
+    static int v35;
+    static int v36;
+    static int v37;
+    static int v38;
+    static int v39;
+    static int vma1;
+    static int vmc1;
+    static int vmc2;
+    static int vmc3;
+    static int vmc4;
+    static int vmc5;
+    static int vmzm1;
+    static int q1;
+
     public static void main(String[] args) {
 	// write your code here
         try {
@@ -50,9 +74,11 @@ public class HttpServerSalvador {
             try{
                 InputStream in = t.getRequestBody();
                 //String response = ;
-                t.sendResponseHeaders(200,createWeb(t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13).length());
+                t.sendResponseHeaders(200,createWeb(t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,b1,b2,b3,b4,b5,v31,v32,v33,v34,v35,
+                        v36,v37,v38,v39,vma1,vmc1,vmc2,vmc3,vmc4,vmc5,vmzm1,q1).length());
                 OutputStream out = t.getResponseBody();
-                out.write(createWeb(t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13).getBytes());
+                out.write(createWeb(t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,b1,b2,b3,b4,b5,v31,v32,v33,v34,v35,
+                        v36,v37,v38,v39,vma1,vmc1,vmc2,vmc3,vmc4,vmc5,vmzm1,q1).getBytes());
                 out.close();
             } catch (Exception e){
                 System.out.println("Error: "+e);
@@ -84,56 +110,147 @@ public class HttpServerSalvador {
                 //System.out.println(s.toString());
                 switch(s) {
                     case "t1 ":
-                        System.out.println("t1 es "+response.toString().substring(4));
-                        t1 = Float.parseFloat(response.toString().substring(4));
+                        //System.out.println("t1 es "+response.toString().substring(4));
+                        t1 = Integer.parseInt(response.toString().substring(4));
                         break;
                     case "t2 ":
                         //System.out.println("t2 es "+response.toString().substring(4));
-                        t2 = Float.parseFloat(response.toString().substring(4));
+                        t2 = Integer.parseInt(response.toString().substring(4));
                         break;
                     case "t3 ":
                         //System.out.println("t1 es "+response.toString().substring(4));
-                        t3 = Float.parseFloat(response.toString().substring(4));
+                        t3 = Integer.parseInt(response.toString().substring(4));
                         break;
                     case "t4 ":
                         //System.out.println("t2 es "+response.toString().substring(4));
-                        t4 = Float.parseFloat(response.toString().substring(4));
+                        t4 = Integer.parseInt(response.toString().substring(4));
                         break;
                     case "t5 ":
                         //System.out.println("t1 es "+response.toString().substring(4));
-                        t5 = Float.parseFloat(response.toString().substring(4));
+                        t5 = Integer.parseInt(response.toString().substring(4));
                         break;
                     case "t6 ":
                         //System.out.println("t2 es "+response.toString().substring(4));
-                        t6 = Float.parseFloat(response.toString().substring(4));
+                        t6 = Integer.parseInt(response.toString().substring(4));
                         break;
                     case "t7 ":
                         //System.out.println("t1 es "+response.toString().substring(4));
-                        t7 = Float.parseFloat(response.toString().substring(4));
+                        t7 = Integer.parseInt(response.toString().substring(4));
                         break;
                     case "t8 ":
                         //System.out.println("t2 es "+response.toString().substring(4));
-                        t8 = Float.parseFloat(response.toString().substring(4));
+                        t8 = Integer.parseInt(response.toString().substring(4));
                         break;
                     case "t9 ":
                         //System.out.println("t1 es "+response.toString().substring(4));
-                        t9 = Float.parseFloat(response.toString().substring(4));
+                        t9 = Integer.parseInt(response.toString().substring(4));
                         break;
                     case "t10":
                         //System.out.println("t2 es "+response.toString().substring(5));
-                        t10 = Float.parseFloat(response.toString().substring(5));
+                        t10 = Integer.parseInt(response.toString().substring(5));
                         break;
                     case "t11":
                         //System.out.println("t1 es "+response.toString().substring(5));
-                        t11 = Float.parseFloat(response.toString().substring(5));
+                        t11 = Integer.parseInt(response.toString().substring(5));
                         break;
                     case "t12":
                         //System.out.println("t2 es "+response.toString().substring(5));
-                        t12 = Float.parseFloat(response.toString().substring(5));
+                        t12 = Integer.parseInt(response.toString().substring(5));
                         break;
                     case "t13":
                         //System.out.println("t2 es "+response.toString().substring(5));
-                        t13 = Float.parseFloat(response.toString().substring(5));
+                        t13 = Integer.parseInt(response.toString().substring(5));
+                        break;
+
+
+                    case "b1 ":
+                        //System.out.println("b1 es "+response.toString().substring(4));
+                        b1 = Integer.parseInt(response.toString().substring(5,6).trim());
+                        break;
+                    case "b2 ":
+                        //System.out.println("b2 es "+response.toString().substring(4));
+                        b2 = Integer.parseInt(response.toString().substring(5).trim());
+                        break;
+                    case "b3 ":
+                        //System.out.println("b3 es "+response.toString().substring(4));
+                        b3 = Integer.parseInt(response.toString().substring(5).trim());
+                        break;
+                    case "b4 ":
+                        //System.out.println("b4 es "+response.toString().substring(4));
+                        b4 = Integer.parseInt(response.toString().substring(5).trim());
+                        break;
+                    case "b5 ":
+                        //System.out.println("b5 es "+response.toString().substring(4));
+                        b5 = Integer.parseInt(response.toString().substring(5).trim());
+                        break;
+
+                    case "v1 ":
+                        //System.out.println("t1 es "+response.toString().substring(4));
+                        v31 = Integer.parseInt(response.toString().substring(5).trim());
+                        break;
+                    case "v2 ":
+                        //System.out.println("t2 es "+response.toString().substring(4));
+                        v32 = Integer.parseInt(response.toString().substring(5).trim());
+                        break;
+                    case "v3 ":
+                        //System.out.println("t1 es "+response.toString().substring(4));
+                        v33 = Integer.parseInt(response.toString().substring(5).trim());
+                        break;
+                    case "v4 ":
+                        //System.out.println("t2 es "+response.toString().substring(4));
+                        v34 = Integer.parseInt(response.toString().substring(5).trim());
+                        break;
+                    case "v5 ":
+                        //System.out.println("t1 es "+response.toString().substring(4));
+                        v35 = Integer.parseInt(response.toString().substring(5).trim());
+                        break;
+                    case "v6 ":
+                        //System.out.println("t2 es "+response.toString().substring(4));
+                        v36 = Integer.parseInt(response.toString().substring(5).trim());
+                        break;
+                    case "v7 ":
+                        //System.out.println("t1 es "+response.toString().substring(4));
+                        v37 = Integer.parseInt(response.toString().substring(5).trim());
+                        break;
+                    case "v8 ":
+                        //System.out.println("t2 es "+response.toString().substring(4));
+                        v38 = Integer.parseInt(response.toString().substring(5).trim());
+                        break;
+                    case "v9 ":
+                        //System.out.println("t1 es "+response.toString().substring(4));
+                        v39 = Integer.parseInt(response.toString().substring(5).trim());
+                        break;
+                    case "v10":
+                        //System.out.println("t2 es "+response.toString().substring(5));
+                        vma1 = Integer.parseInt(response.toString().substring(6).trim());
+                        break;
+                    case "v11":
+                        //System.out.println("t1 es "+response.toString().substring(5));
+                        vmc1 = Integer.parseInt(response.toString().substring(6).trim());
+                        break;
+                    case "v12":
+                        //System.out.println("t2 es "+response.toString().substring(5));
+                        vmc2 = Integer.parseInt(response.toString().substring(6).trim());
+                        break;
+                    case "v13":
+                        //System.out.println("t2 es "+response.toString().substring(5));
+                        vmc3 = Integer.parseInt(response.toString().substring(6).trim());;
+                        break;
+                    case "v14":
+                        //System.out.println("t2 es "+response.toString().substring(5));
+                        vmc4 = Integer.parseInt(response.toString().substring(6).trim());;
+                        break;
+                    case "v15":
+                        //System.out.println("t2 es "+response.toString().substring(5));
+                        vmc5 = Integer.parseInt(response.toString().substring(6).trim());;
+                        break;
+                    case "v16":
+                        //System.out.println("t2 es "+response.toString().substring(5));
+                        vmzm1 = Integer.parseInt(response.toString().substring(6).trim());;
+                        break;
+                    case "v17":
+                        //System.out.println("t2 es "+response.toString().substring(5));
+                        q1 = Integer.parseInt(response.toString().substring(6).trim());;
                         break;
                 }
                 os.close();
@@ -223,84 +340,223 @@ public class HttpServerSalvador {
         }
     }
 
-    public static String createWeb(float t1, float t2, float t3, float t4, float t5, float t6, float t7, float t8,
-                                    float t9, float t10, float t11, float t12, float t13){
+    public static String createWeb(int t1, int t2, int t3, int t4, int t5, int t6, int t7, int t8,
+                                   int t9, int t10, int t11, int t12, int t13, int b1, int b2, int b3,
+                                   int b4, int b5, int v31, int v32, int v33, int v34, int v35, int v36, int v37,
+                                   int v38, int v39, int vma1, int vmc1, int vmc2, int vmc3, int vmc4, int vmc5,
+                                   int vmzm1, int q1){
 
-        String T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13 = null;
+        String T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, B1, B2, B3, B4, B5, V31, V32, V33, V34, V35, V36,
+        V37, V38, V39, VMA1, VMC1, VMC2, VMC3, VMC4, VMC5, VMZM1, Q1= null;
 
         if (t1>80){
-            T1 = "<td>T1</td>\n<td bgcolor=\"#FF0000\">"+t1+" &deg;C</td>\t\t\n</tr>\n" ;
+            T1 = "<td bgcolor=\"#FF0000\">"+t1+"&deg;C</td>" ;
         }else{
-            T1 = "<td>T1</td>\n    <td>"+t1+" &deg;C</td>\t\t\n</tr>\n" ;
+            T1 = "<td>"+t1+"&deg;C</td>" ;
         }
         if (t2>80){
-            T2 = "<td>T2</td>\n<td bgcolor=\"#FF0000\">"+t2+" &deg;C</td>\t\t\n</tr>\n" ;
+            T2 = "<td bgcolor=\"#FF0000\">"+t2+"&deg;C</td>" ;
         }else{
-            T2 = "<td>T2</td>\n    <td>"+t2+" &deg;C</td>\t\t\n</tr>\n" ;
+            T2 = "<td>"+t2+"&deg;C</td>" ;
         }
 
         if (t3>80){
-            T3 = "<td>T3</td>\n<td bgcolor=\"#FF0000\">"+t3+" &deg;C</td>\t\t\n</tr>\n" ;
+            T3 = "<td bgcolor=\"#FF0000\">"+t3+"&deg;C</td>" ;
         }else{
-            T3 = "<td>T3</td>\n    <td>"+t3+" &deg;C</td>\t\t\n</tr>\n" ;
+            T3 = "<td>"+t3+"&deg;C</td>" ;
         }
 
         if (t4>80){
-            T4 = "<td>T4</td>\n<td bgcolor=\"#FF0000\">"+t4+" &deg;C</td>\t\t\n</tr>\n" ;
+            T4 = "<td bgcolor=\"#FF0000\">"+t4+"&deg;C</td>" ;
         }else{
-            T4 = "<td>T4</td>\n    <td>"+t4+" &deg;C</td>\t\t\n</tr>\n" ;
+            T4 = "<td>"+t4+"&deg;C</td>" ;
         }
         if (t5>80){
-            T5 = "<td>T5</td>\n<td bgcolor=\"#FF0000\">"+t5+" &deg;C</td>\t\t\n</tr>\n" ;
+            T5 = "<td bgcolor=\"#FF0000\">"+t5+"&deg;C</td>" ;
         }else{
-            T5 = "<td>T5</td>\n    <td>"+t5+" &deg;C</td>\t\t\n</tr>\n" ;
+            T5 = "<td>"+t5+"&deg;C</td>" ;
         }
 
         if (t6>80){
-            T6 = "<td>T6</td>\n<td bgcolor=\"#FF0000\">"+t6+" &deg;C</td>\t\t\n</tr>\n" ;
+            T6 = "<td bgcolor=\"#FF0000\">"+t6+"&deg;C</td>" ;
         }else{
-            T6 = "<td>T6</td>\n    <td>"+t6+" &deg;C</td>\t\t\n</tr>\n" ;
+            T6 = "<td>"+t6+"&deg;C</td>" ;
         }
 
         if (t7>80){
-            T7 = "<td>T7</td>\n<td bgcolor=\"#FF0000\">"+t7+" &deg;C</td>\t\t\n</tr>\n" ;
+            T7 = "<td bgcolor=\"#FF0000\">"+t7+"&deg;C</td>" ;
         }else{
-            T7 = "<td>T7</td>\n    <td>"+t7+" &deg;C</td>\t\t\n</tr>\n" ;
+            T7 = "<td>"+t7+"&deg;C</td>" ;
         }
         if (t8>80){
-            T8 = "<td>T8</td>\n<td bgcolor=\"#FF0000\">"+t8+" &deg;C</td>\t\t\n</tr>\n" ;
+            T8 = "<td bgcolor=\"#FF0000\">"+t8+"&deg;C</td>" ;
         }else{
-            T8 = "<td>T8</td>\n    <td>"+t8+" &deg;C</td>\t\t\n</tr>\n" ;
+            T8 = "<td>"+t8+"&deg;C</td>" ;
         }
 
         if (t9>80){
-            T9 = "<td>T9</td>\n<td bgcolor=\"#FF0000\">"+t9+" &deg;C</td>\t\t\n</tr>\n" ;
+            T9 = "<td bgcolor=\"#FF0000\">"+t9+"&deg;C</td>" ;
         }else{
-            T9 = "<td>T9</td>\n    <td>"+t9+" &deg;C</td>\t\t\n</tr>\n" ;
+            T9 = "<td>"+t9+"&deg;C</td>" ;
         }
 
         if (t10>80){
-            T10 = "<td>T10</td>\n<td bgcolor=\"#FF0000\">"+t10+" &deg;C</td>\t\t\n</tr>\n" ;
+            T10 = "<td bgcolor=\"#FF0000\">"+t10+"&deg;C</td>" ;
         }else{
-            T10 = "<td>T10</td>\n    <td>"+t10+" &deg;C</td>\t\t\n</tr>\n" ;
+            T10 = "<td>"+t10+"&deg;C</td>" ;
         }
         if (t11>80){
-            T11 = "<td>T11</td>\n<td bgcolor=\"#FF0000\">"+t11+" &deg;C</td>\t\t\n</tr>\n" ;
+            T11 = "<td bgcolor=\"#FF0000\">"+t11+"&deg;C</td>" ;
         }else{
-            T11 = "<td>T11</td>\n    <td>"+t11+" &deg;C</td>\t\t\n</tr>\n" ;
+            T11 = "<td>"+t11+"&deg;C</td>" ;
         }
 
         if (t12>80){
-            T12 = "<td>T12</td>\n<td bgcolor=\"#FF0000\">"+t12+" &deg;C</td>\t\t\n</tr>\n" ;
+            T12 = "<td bgcolor=\"#FF0000\">"+t12+"&deg;C</td>" ;
         }else{
-            T12 = "<td>T12</td>\n    <td>"+t12+" &deg;C</td>\t\t\n</tr>\n" ;
+            T12 = "<td>"+t12+"&deg;C</td>" ;
         }
 
         if (t13>80){
-            T13 = "<td>T13</td>\n<td bgcolor=\"#FF0000\">"+t13+" &deg;C</td>\t\t\n</tr>\n" ;
+            T13 = "<td bgcolor=\"#FF0000\">"+t13+"&deg;C</td>" ;
         }else{
-            T13 = "<td>T13</td>\n    <td>"+t13+" &deg;C</td>\t\t\n</tr>\n" ;
+            T13 = "<td>"+t13+"&deg;C</td>" ;
         }
+
+
+        if (b1 == 0){
+            B1 = "<td>B1</td><td bgcolor=\"#FF0000\">OFF</td>" ;
+        }else{
+            B1 = "<td>B1</td>    <td bgcolor=\"#00FF00\">ON</td>" ;
+        }
+        if (b2 == 0){
+            B2 = "<td>B2</td><td bgcolor=\"#FF0000\">OFF</td>" ;
+        }else{
+            B2 = "<td>B2</td>    <td bgcolor=\"#00FF00\">ON</td>" ;
+        }
+        if (b3 == 0){
+            B3 = "<td>B3</td><td bgcolor=\"#FF0000\">OFF</td>" ;
+        }else{
+            B3 = "<td>B3</td>    <td bgcolor=\"#00FF00\">ON</td>" ;
+        }
+
+        if (b4 == 0){
+            B4 = "<td>B4</td><td bgcolor=\"#FF0000\">OFF</td>" ;
+        }else{
+            B4 = "<td>B4</td>    <td bgcolor=\"#00FF00\">ON</td>" ;
+        }
+
+        if (b5 == 0){
+            B5 = "<td>B5</td><td bgcolor=\"#FF0000\">OFF</td>" ;
+        }else{
+            B5 = "<td>B5</td>    <td bgcolor=\"#00FF00\">ON</td>" ;
+        }
+
+
+        if (v31==0){
+            V31 = "<td>V31</td><td bgcolor=\"#FF0000\">OFF</td>" ;
+        }else{
+            V31 = "<td>V31</td>    <td bgcolor=\"#00FF00\">ON</td>";
+        }
+
+        if (v32==0){
+            V32 = "<td>V32</td><td bgcolor=\"#FF0000\">OFF</td>" ;
+        }else{
+            V32 = "<td>V32</td>    <td bgcolor=\"#00FF00\">ON</td>";
+        }
+
+        if (v33==0){
+            V33 = "<td>V33</td><td bgcolor=\"#FF0000\">OFF</td>" ;
+        }else{
+            V33 = "<td>V33</td>    <td bgcolor=\"#00FF00\">ON</td>";
+        }
+
+        if (v34==0){
+            V34 = "<td>V34</td><td bgcolor=\"#FF0000\">OFF</td>" ;
+        }else{
+            V34 = "<td>V34</td>    <td bgcolor=\"#00FF00\">ON</td>";
+        }
+
+        if (v35==0){
+            V35 = "<td>V35</td><td bgcolor=\"#FF0000\">OFF</td>" ;
+        }else{
+            V35 = "<td>V35</td>    <td bgcolor=\"#00FF00\">ON</td>";
+        }
+
+        if (v36==0){
+            V36 = "<td>V36</td><td bgcolor=\"#FF0000\">OFF</td>" ;
+        }else{
+            V36 = "<td>V36</td>    <td bgcolor=\"#00FF00\">ON</td>";
+        }
+
+        if (v37==0){
+            V37 = "<td>V37</td><td bgcolor=\"#FF0000\">OFF</td>" ;
+        }else{
+            V37 = "<td>V37</td>    <td bgcolor=\"#00FF00\">ON</td>";
+        }
+
+        if (v38==0){
+            V38 = "<td>V38</td><td bgcolor=\"#FF0000\">OFF</td>" ;
+        }else{
+            V38 = "<td>V38</td>    <td bgcolor=\"#00FF00\">ON</td>";
+        }
+
+        if (v39==0){
+            V39 = "<td>V39</td><td bgcolor=\"#FF0000\">OFF</td>" ;
+        }else{
+            V39 = "<td>V39</td>    <td bgcolor=\"#00FF00\">ON</td>";
+        }
+
+        if (vma1==0){
+            VMA1 = "<td>VMA1</td><td bgcolor=\"#FF0000\">OFF</td>" ;
+        }else{
+            VMA1 = "<td>VMA1</td>    <td bgcolor=\"#00FF00\">ON</td>";
+        }
+
+        if (vmc1==0){
+            VMC1 = "<td>VMC1</td><td bgcolor=\"#FF0000\">OFF</td>" ;
+        }else{
+            VMC1 = "<td>VMC1</td>    <td bgcolor=\"#00FF00\">ON</td>";
+        }
+
+        if (vmc2==0){
+            VMC2 = "<td>VMC2</td><td bgcolor=\"#FF0000\">OFF</td>" ;
+        }else{
+            VMC2 = "<td>VMC2</td>    <td bgcolor=\"#00FF00\">ON</td>";
+        }
+
+        if (vmc3==0){
+            VMC3 = "<td>VMC3</td><td bgcolor=\"#FF0000\">OFF</td>" ;
+        }else{
+            VMC3 = "<td>VMC3</td>    <td bgcolor=\"#00FF00\">ON</td>";
+        }
+
+        if (vmc4==0){
+            VMC4 = "<td>VMC4</td><td bgcolor=\"#FF0000\">OFF</td>" ;
+        }else{
+            VMC4 = "<td>VMC4</td>    <td bgcolor=\"#00FF00\">ON</td>";
+        }
+
+        if (vmc5==0){
+            VMC5 = "<td>VMC5</td><td bgcolor=\"#FF0000\">OFF</td>" ;
+        }else{
+            VMC5 = "<td>VMC5</td>    <td bgcolor=\"#00FF00\">ON</td>";
+        }
+
+        if (vmzm1==0){
+            VMZM1 = "<td>VMZM1</td><td bgcolor=\"#FF0000\">OFF</td>" ;
+        }else{
+            VMZM1 = "<td>VMZM1</td>    <td bgcolor=\"#00FF00\">ON</td>";
+        }
+
+        if (q1==0){
+            Q1 = "<td>Q1</td><td bgcolor=\"#FF0000\">OFF</td>" ;
+        }else{
+            Q1 = "<td>Q1</td>    <td bgcolor=\"#00FF00\">ON</td>";
+        }
+
+
+
 
         return "<!DOCTYPE html>\n" +
                 "<html>\n" +
@@ -332,11 +588,11 @@ public class HttpServerSalvador {
                 "<title>Estado Tiempo Real</title>"+
                 "</head>\n" +
                 "<body>\n" +
-                "<div style=\"padding: 0px; float: left; width: 45%; text-align: justify;\">"+
+               // "<div style=\"padding: 0px; float: left; width: 40%; text-align: justify;\">"+
                 "<H1>Temperaturas Tiempo Real </H1>"+
                 "\n" +
                 "<table class=\"names\">\n" +
-                "  <tr>\n" +
+                /*"  <tr>\n" +
                 "    <th>Sensor</th>\n" +
                 "    <th>Temperatura</th>\t\t\n" +
                 "  </tr>\n" +
@@ -352,13 +608,71 @@ public class HttpServerSalvador {
                 "  <tr>\n" + T10 +
                 "  <tr>\n" + T11 +
                 "  <tr>\n" + T12 +
-                "  <tr>\n" + T13 +
+                "  <tr>\n" + T13 +*/
+                "<TR><TH>Sensor</TH>"+
+                "<TD>T1</TD> <TD>T2</TD> <TD>T3</TD><TD>T4</TD> <TD>T5</TD> <TD>T6</TD><TD>T7</TD> <TD>T8</TD> <TD>T9</TD><TD>T10</TD> <TD>T11</TD> <TD>T12</TD><TD>T13</TD></TR>"+
+                "<TR><TH>Temperatura</TH>"+
+                T1+T2+T3+T4+T5+T6+T7+T8+T9+T10+T11+T12+T13+"</TR>"+
                 "</table>\n" +
                 "\n" +
-                "</div>"+
-                "<div style=\"padding: 0px; float: right; width: 45%; text-align: justify;\">"+
+                //"</div>"+
+                //"<div style=\"padding: 0px; float: right; width: 60%; text-align: justify;\">"+
                 "<H1>Estado bombas y valvulas</H1>"+
-                "</div>"+
+                "\n"+
+                //"<H3 float: center;>Energia Solar</H3>"+
+                "<table style=\"float: left; \"class=\"names\">" +
+                "<table style=\"float: left; \"class=\"names\">" +
+                "<TR>"+
+                "<TH COLSPAN=2>Energia solar</TH>"+
+                "<TH COLSPAN=4>Calefaccion</TH>"+
+                "<TH COLSPAN=2>Agua Caliente</TH>"+
+                "</TR>"+
+                "<TR>"+
+                "<TH>Bombas/Valvulas</TH> <TH>Estado</TH>"+
+                "<TH>Bombas/Valvulas</TH> <TH>Estado</TH>"+
+                "<TH>Bombas/Valvulas</TH> <TH>Estado</TH>"+
+                "<TH>Bombas/Valvulas</TH> <TH>Estado</TH>"+
+                "</TR>"+
+                "<TR>"+
+                B1+
+                VMZM1+
+                VMC2+
+                B4+
+                "</TR>"+
+                "<TR>"+
+                V31+
+                V32+
+                VMC4+
+                VMC5+
+                "</TR>"+
+                "<tr>"+
+                V38+
+                V36+
+                VMA1+
+                B2+
+                "</tr>"+
+                "<tr>"+
+                V37+
+                B5+
+                V33+
+                "<TD></TD><TD></TD>"+
+                "</tr>"+
+                "<tr>"+
+                V35+
+                B3+
+                VMC1+
+                "<TD></TD><TD></TD>"+
+                "</tr>"+
+                "<tr>"+
+                V39+
+                V34+
+                VMC3+
+                "<TD></TD><TD></TD>"+
+                "</tr>"+
+                "<TR><tD></td><tD></td>"+Q1+"<tD></td><TD></TD><tD></td></tr>"+
+
+                "</TABLE>"+
+                //"</div>"+
                 "</body>\n" +
                 " <META HTTP-EQUIV=\"REFRESH\" CONTENT=\"5 ;URL=index\">"+
                 "</html>";
