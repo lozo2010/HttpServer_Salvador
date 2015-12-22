@@ -36,9 +36,9 @@ public class HttpServerSalvador {
             try{
                 InputStream in = t.getRequestBody();
                 //String response = ;
-                t.sendResponseHeaders(200,createWeb(1,1,1,1,1,1,1,1,1,1,1,1,1).length());
+                t.sendResponseHeaders(200,createWeb(1,1,85,1,1,1,1,1,1,1,1,1,1).length());
                 OutputStream out = t.getResponseBody();
-                out.write(createWeb(1,1,1,1,1,1,1,1,1,1,1,1,1).getBytes());
+                out.write(createWeb(1,1,85,1,1,1,1,1,1,1,1,1,1).getBytes());
                 out.close();
             } catch (Exception e){
                 System.out.println("Error: "+e);
@@ -155,20 +155,98 @@ public class HttpServerSalvador {
 
     public static String createWeb(float t1, float t2, float t3, float t4, float t5, float t6, float t7, float t8,
                                     float t9, float t10, float t11, float t12, float t13){
+
+        String T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13 = null;
+
+        if (t1>80){
+            T1 = "<td>T1</td>\n<td bgcolor=\"#FF0000\">"+t1+" &deg;C</td>\t\t\n</tr>\n" ;
+        }else{
+            T1 = "<td>T1</td>\n    <td>"+t1+" &deg;C</td>\t\t\n</tr>\n" ;
+        }
+        if (t2>80){
+            T2 = "<td>T2</td>\n<td bgcolor=\"#FF0000\">"+t2+" &deg;C</td>\t\t\n</tr>\n" ;
+        }else{
+            T2 = "<td>T2</td>\n    <td>"+t2+" &deg;C</td>\t\t\n</tr>\n" ;
+        }
+
+        if (t3>80){
+            T3 = "<td>T3</td>\n<td bgcolor=\"#FF0000\">"+t3+" &deg;C</td>\t\t\n</tr>\n" ;
+        }else{
+            T3 = "<td>T3</td>\n    <td>"+t3+" &deg;C</td>\t\t\n</tr>\n" ;
+        }
+
+        if (t4>80){
+            T4 = "<td>T4</td>\n<td bgcolor=\"#FF0000\">"+t4+" &deg;C</td>\t\t\n</tr>\n" ;
+        }else{
+            T4 = "<td>T4</td>\n    <td>"+t4+" &deg;C</td>\t\t\n</tr>\n" ;
+        }
+        if (t5>80){
+            T5 = "<td>T5</td>\n<td bgcolor=\"#FF0000\">"+t5+" &deg;C</td>\t\t\n</tr>\n" ;
+        }else{
+            T5 = "<td>T5</td>\n    <td>"+t5+" &deg;C</td>\t\t\n</tr>\n" ;
+        }
+
+        if (t6>80){
+            T6 = "<td>T6</td>\n<td bgcolor=\"#FF0000\">"+t6+" &deg;C</td>\t\t\n</tr>\n" ;
+        }else{
+            T6 = "<td>T6</td>\n    <td>"+t6+" &deg;C</td>\t\t\n</tr>\n" ;
+        }
+
+        if (t7>80){
+            T7 = "<td>T7</td>\n<td bgcolor=\"#FF0000\">"+t7+" &deg;C</td>\t\t\n</tr>\n" ;
+        }else{
+            T7 = "<td>T7</td>\n    <td>"+t7+" &deg;C</td>\t\t\n</tr>\n" ;
+        }
+        if (t8>80){
+            T8 = "<td>T8</td>\n<td bgcolor=\"#FF0000\">"+t8+" &deg;C</td>\t\t\n</tr>\n" ;
+        }else{
+            T8 = "<td>T8</td>\n    <td>"+t8+" &deg;C</td>\t\t\n</tr>\n" ;
+        }
+
+        if (t9>80){
+            T9 = "<td>T9</td>\n<td bgcolor=\"#FF0000\">"+t9+" &deg;C</td>\t\t\n</tr>\n" ;
+        }else{
+            T9 = "<td>T9</td>\n    <td>"+t9+" &deg;C</td>\t\t\n</tr>\n" ;
+        }
+
+        if (t10>80){
+            T10 = "<td>T10</td>\n<td bgcolor=\"#FF0000\">"+t10+" &deg;C</td>\t\t\n</tr>\n" ;
+        }else{
+            T10 = "<td>T10</td>\n    <td>"+t10+" &deg;C</td>\t\t\n</tr>\n" ;
+        }
+        if (t11>80){
+            T11 = "<td>T11</td>\n<td bgcolor=\"#FF0000\">"+t11+" &deg;C</td>\t\t\n</tr>\n" ;
+        }else{
+            T11 = "<td>T11</td>\n    <td>"+t11+" &deg;C</td>\t\t\n</tr>\n" ;
+        }
+
+        if (t12>80){
+            T12 = "<td>T12</td>\n<td bgcolor=\"#FF0000\">"+t12+" &deg;C</td>\t\t\n</tr>\n" ;
+        }else{
+            T12 = "<td>T12</td>\n    <td>"+t12+" &deg;C</td>\t\t\n</tr>\n" ;
+        }
+
+        if (t13>80){
+            T13 = "<td>T13</td>\n<td bgcolor=\"#FF0000\">"+t13+" &deg;C</td>\t\t\n</tr>\n" ;
+        }else{
+            T13 = "<td>T13</td>\n    <td>"+t13+" &deg;C</td>\t\t\n</tr>\n" ;
+        }
+
         return "<!DOCTYPE html>\n" +
                 "<html>\n" +
                 "<head>\n" +
                 "<style>\n" +
                 "table {\n" +
-                "    width:15%;\n" +
+                "    width: 25%;\n" +
+                "    margin-left: 130px;\n"+
                 "}\n" +
                 "table, th, td {\n" +
-                "    border: 1px solid black;\n" +
+                "    border: 2px solid black;\n" +
                 "    border-collapse: collapse;\n" +
                 "}\n" +
                 "th, td {\n" +
                 "    padding: 5px;\n" +
-                "    text-align: left;\n" +
+                "    text-align: center;\n" +
                 "}\n" +
                 "table.names tr:nth-child(even) {\n" +
                 "    background-color: #eee;\n" +
@@ -177,73 +255,42 @@ public class HttpServerSalvador {
                 "   background-color:#fff;\n" +
                 "}\n" +
                 "table.names th\t{\n" +
-                "    background-color: black;\n" +
+                "    background-color: grey;\n" +
                 "    color: white\n" +
                 "}\n" +
                 "</style>\n" +
+                "<title>Estado Tiempo Real</title>"+
                 "</head>\n" +
                 "<body>\n" +
+                "<div style=\"padding: 0px; float: left; width: 45%; text-align: justify;\">"+
+                "<H1>Temperaturas Tiempo Real </H1>"+
                 "\n" +
                 "<table class=\"names\">\n" +
                 "  <tr>\n" +
                 "    <th>Sensor</th>\n" +
                 "    <th>Temperatura</th>\t\t\n" +
                 "  </tr>\n" +
-                "  <tr>\n" +
-                "    <td>T1</td>\n" +
-                "    <td>"+t1+"</td>\t\t\n" +
-                "  </tr>\n" +
-                "  <tr>\n" +
-                "    <td>T2</td>\n" +
-                "    <td>"+t2+"</td>\t\t\n" +
-                "  </tr>\n" +
-                "  <tr>\n" +
-                "    <td>T3</td>\n" +
-                "    <td>"+t3+"</td>\t\t\n" +
-                "  </tr>\n" +
-                "  <tr>\n" +
-                "    <td>T4</td>\n" +
-                "    <td>"+t4+"</td>\t\t\n" +
-                "  </tr>\n" +
-                "  <tr>\n" +
-                "    <td>T5</td>\n" +
-                "    <td>"+t5+"</td>\t\t\n" +
-                "  </tr>\n" +
-                "  <tr>\n" +
-                "    <td>T6</td>\n" +
-                "    <td>"+t6+"</td>\t\t\n" +
-                "  </tr>\n" +
-                "  <tr>\n" +
-                "    <td>T7</td>\n" +
-                "    <td>"+t7+"</td>\t\t\n" +
-                "  </tr>\n" +
-                "  <tr>\n" +
-                "    <td>T8</td>\n" +
-                "    <td>"+t8+"</td>\t\t\n" +
-                "  </tr>\n" +
-                "  <tr>\n" +
-                "    <td>T9</td>\n" +
-                "    <td>"+t9+"</td>\t\t\n" +
-                "  </tr>\n" +
-                "  <tr>\n" +
-                "    <td>T10</td>\n" +
-                "    <td>"+t10+"</td>\t\t\n" +
-                "  </tr>\n" +
-                "  <tr>\n" +
-                "    <td>T11</td>\n" +
-                "    <td>"+t11+"</td>\t\t\n" +
-                "  </tr>\n" +
-                "  <tr>\n" +
-                "    <td>T12</td>\n" +
-                "    <td>"+t12+"</td>\t\t\n" +
-                "  </tr>\n" +
-                "  <tr>\n" +
-                "    <td>T13</td>\n" +
-                "    <td>"+t13+"</td>\t\t\n" +
-                "  </tr>\n" +
+                "  <tr>\n" + T1 +
+                "  <tr>\n" + T2 +
+                "  <tr>\n" + T3 +
+                "  <tr>\n" + T4 +
+                "  <tr>\n" + T5 +
+                "  <tr>\n" + T6 +
+                "  <tr>\n" + T7 +
+                "  <tr>\n" + T8 +
+                "  <tr>\n" + T9 +
+                "  <tr>\n" + T10 +
+                "  <tr>\n" + T11 +
+                "  <tr>\n" + T12 +
+                "  <tr>\n" + T13 +
                 "</table>\n" +
                 "\n" +
+                "</div>"+
+                "<div style=\"padding: 0px; float: right; width: 45%; text-align: justify;\">"+
+                "<H1>Estado bombas y valvulas</H1>"+
+                "</div>"+
                 "</body>\n" +
+                " <META HTTP-EQUIV=\"REFRESH\" CONTENT=\"5 ;URL=index\">"+
                 "</html>";
     }
 }
