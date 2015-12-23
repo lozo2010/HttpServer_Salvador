@@ -104,153 +104,153 @@ public class HttpServerSalvador {
                     response += key + " = " + parameters.get(key) + "\n";
                 he.sendResponseHeaders(200, response.length());
                 OutputStream os = he.getResponseBody();
-                os.write(response.toString().getBytes());
-                //System.out.println(response.toString());
-                String s =response.toString().substring(0,3);
-                //System.out.println(s.toString());
+                os.write(response.getBytes());
+                //System.out.println(response);
+                String s =response.substring(0,3);
+                //System.out.println(s);
                 switch(s) {
                     case "t1 ":
-                        //System.out.println("t1 es "+response.toString().substring(4));
-                        t1 = Integer.parseInt(response.toString().substring(4));
+                        //System.out.println("t1 es "+response.substring(4));
+                        t1 = Integer.parseInt(response.substring(5).trim());
                         break;
                     case "t2 ":
-                        //System.out.println("t2 es "+response.toString().substring(4));
-                        t2 = Integer.parseInt(response.toString().substring(4));
+                        //System.out.println("t2 es "+response.substring(4));
+                        t2 = Integer.parseInt(response.substring(5).trim());
                         break;
                     case "t3 ":
-                        //System.out.println("t1 es "+response.toString().substring(4));
-                        t3 = Integer.parseInt(response.toString().substring(4));
+                        //System.out.println("t1 es "+response.substring(4));
+                        t3 = Integer.parseInt(response.substring(5).trim());
                         break;
                     case "t4 ":
-                        //System.out.println("t2 es "+response.toString().substring(4));
-                        t4 = Integer.parseInt(response.toString().substring(4));
+                        //System.out.println("t2 es "+response.substring(4));
+                        t4 = Integer.parseInt(response.substring(5).trim());
                         break;
                     case "t5 ":
-                        //System.out.println("t1 es "+response.toString().substring(4));
-                        t5 = Integer.parseInt(response.toString().substring(4));
+                        //System.out.println("t1 es "+response.substring(4));
+                        t5 = Integer.parseInt(response.substring(5).trim());
                         break;
                     case "t6 ":
-                        //System.out.println("t2 es "+response.toString().substring(4));
-                        t6 = Integer.parseInt(response.toString().substring(4));
+                        //System.out.println("t2 es "+response.substring(4));
+                        t6 = Integer.parseInt(response.substring(5).trim());
                         break;
                     case "t7 ":
-                        //System.out.println("t1 es "+response.toString().substring(4));
-                        t7 = Integer.parseInt(response.toString().substring(4));
+                        //System.out.println("t1 es "+response.substring(4));
+                        t7 = Integer.parseInt(response.substring(5).trim());
                         break;
                     case "t8 ":
-                        //System.out.println("t2 es "+response.toString().substring(4));
-                        t8 = Integer.parseInt(response.toString().substring(4));
+                        //System.out.println("t2 es "+response.substring(4));
+                        t8 = Integer.parseInt(response.substring(5).trim());
                         break;
                     case "t9 ":
-                        //System.out.println("t1 es "+response.toString().substring(4));
-                        t9 = Integer.parseInt(response.toString().substring(4));
+                        //System.out.println("t1 es "+response.substring(4));
+                        t9 = Integer.parseInt(response.substring(5).trim());
                         break;
                     case "t10":
-                        //System.out.println("t2 es "+response.toString().substring(5));
-                        t10 = Integer.parseInt(response.toString().substring(5));
+                        //System.out.println("t2 es "+response.substring(5));
+                        t10 = Integer.parseInt(response.substring(6).trim());
                         break;
                     case "t11":
-                        //System.out.println("t1 es "+response.toString().substring(5));
-                        t11 = Integer.parseInt(response.toString().substring(5));
+                        //System.out.println("t1 es "+response.substring(5));
+                        t11 = Integer.parseInt(response.substring(6).trim());
                         break;
                     case "t12":
-                        //System.out.println("t2 es "+response.toString().substring(5));
-                        t12 = Integer.parseInt(response.toString().substring(5));
+                        //System.out.println("t2 es "+response.substring(5));
+                        t12 = Integer.parseInt(response.substring(6).trim());
                         break;
                     case "t13":
-                        //System.out.println("t2 es "+response.toString().substring(5));
-                        t13 = Integer.parseInt(response.toString().substring(5));
+                        //System.out.println("t2 es "+response.substring(5));
+                        t13 = Integer.parseInt(response.substring(6).trim());
                         break;
 
 
                     case "b1 ":
-                        //System.out.println("b1 es "+response.toString().substring(4));
-                        b1 = Integer.parseInt(response.toString().substring(5,6).trim());
+                        //System.out.println("b1 es "+response.substring(4));
+                        b1 = Integer.parseInt(response.substring(5,6).trim());
                         break;
                     case "b2 ":
-                        //System.out.println("b2 es "+response.toString().substring(4));
-                        b2 = Integer.parseInt(response.toString().substring(5).trim());
+                        //System.out.println("b2 es "+response.substring(4));
+                        b2 = Integer.parseInt(response.substring(5).trim());
                         break;
                     case "b3 ":
-                        //System.out.println("b3 es "+response.toString().substring(4));
-                        b3 = Integer.parseInt(response.toString().substring(5).trim());
+                        //System.out.println("b3 es "+response.substring(4));
+                        b3 = Integer.parseInt(response.substring(5).trim());
                         break;
                     case "b4 ":
-                        //System.out.println("b4 es "+response.toString().substring(4));
-                        b4 = Integer.parseInt(response.toString().substring(5).trim());
+                        //System.out.println("b4 es "+response.substring(4));
+                        b4 = Integer.parseInt(response.substring(5).trim());
                         break;
                     case "b5 ":
-                        //System.out.println("b5 es "+response.toString().substring(4));
-                        b5 = Integer.parseInt(response.toString().substring(5).trim());
+                        //System.out.println("b5 es "+response.substring(4));
+                        b5 = Integer.parseInt(response.substring(5).trim());
                         break;
 
                     case "v1 ":
-                        //System.out.println("t1 es "+response.toString().substring(4));
-                        v31 = Integer.parseInt(response.toString().substring(5).trim());
+                        //System.out.println("t1 es "+response.substring(4));
+                        v31 = Integer.parseInt(response.substring(5).trim());
                         break;
                     case "v2 ":
-                        //System.out.println("t2 es "+response.toString().substring(4));
-                        v32 = Integer.parseInt(response.toString().substring(5).trim());
+                        //System.out.println("t2 es "+response.substring(4));
+                        v32 = Integer.parseInt(response.substring(5).trim());
                         break;
                     case "v3 ":
-                        //System.out.println("t1 es "+response.toString().substring(4));
-                        v33 = Integer.parseInt(response.toString().substring(5).trim());
+                        //System.out.println("t1 es "+response.substring(4));
+                        v33 = Integer.parseInt(response.substring(5).trim());
                         break;
                     case "v4 ":
-                        //System.out.println("t2 es "+response.toString().substring(4));
-                        v34 = Integer.parseInt(response.toString().substring(5).trim());
+                        //System.out.println("t2 es "+response.substring(4));
+                        v34 = Integer.parseInt(response.substring(5).trim());
                         break;
                     case "v5 ":
-                        //System.out.println("t1 es "+response.toString().substring(4));
-                        v35 = Integer.parseInt(response.toString().substring(5).trim());
+                        //System.out.println("t1 es "+response.substring(4));
+                        v35 = Integer.parseInt(response.substring(5).trim());
                         break;
                     case "v6 ":
-                        //System.out.println("t2 es "+response.toString().substring(4));
-                        v36 = Integer.parseInt(response.toString().substring(5).trim());
+                        //System.out.println("t2 es "+response.substring(4));
+                        v36 = Integer.parseInt(response.substring(5).trim());
                         break;
                     case "v7 ":
-                        //System.out.println("t1 es "+response.toString().substring(4));
-                        v37 = Integer.parseInt(response.toString().substring(5).trim());
+                        //System.out.println("t1 es "+response.substring(4));
+                        v37 = Integer.parseInt(response.substring(5).trim());
                         break;
                     case "v8 ":
-                        //System.out.println("t2 es "+response.toString().substring(4));
-                        v38 = Integer.parseInt(response.toString().substring(5).trim());
+                        //System.out.println("t2 es "+response.substring(4));
+                        v38 = Integer.parseInt(response.substring(5).trim());
                         break;
                     case "v9 ":
-                        //System.out.println("t1 es "+response.toString().substring(4));
-                        v39 = Integer.parseInt(response.toString().substring(5).trim());
+                        //System.out.println("t1 es "+response.substring(4));
+                        v39 = Integer.parseInt(response.substring(5).trim());
                         break;
                     case "v10":
-                        //System.out.println("t2 es "+response.toString().substring(5));
-                        vma1 = Integer.parseInt(response.toString().substring(6).trim());
+                        //System.out.println("t2 es "+response.substring(5));
+                        vma1 = Integer.parseInt(response.substring(6).trim());
                         break;
                     case "v11":
-                        //System.out.println("t1 es "+response.toString().substring(5));
-                        vmc1 = Integer.parseInt(response.toString().substring(6).trim());
+                        //System.out.println("t1 es "+response.substring(5));
+                        vmc1 = Integer.parseInt(response.substring(6).trim());
                         break;
                     case "v12":
-                        //System.out.println("t2 es "+response.toString().substring(5));
-                        vmc2 = Integer.parseInt(response.toString().substring(6).trim());
+                        //System.out.println("t2 es "+response.substring(5));
+                        vmc2 = Integer.parseInt(response.substring(6).trim());
                         break;
                     case "v13":
-                        //System.out.println("t2 es "+response.toString().substring(5));
-                        vmc3 = Integer.parseInt(response.toString().substring(6).trim());;
+                        //System.out.println("t2 es "+response.substring(5));
+                        vmc3 = Integer.parseInt(response.substring(6).trim());
                         break;
                     case "v14":
-                        //System.out.println("t2 es "+response.toString().substring(5));
-                        vmc4 = Integer.parseInt(response.toString().substring(6).trim());;
+                        //System.out.println("t2 es "+response.substring(5));
+                        vmc4 = Integer.parseInt(response.substring(6).trim());
                         break;
                     case "v15":
-                        //System.out.println("t2 es "+response.toString().substring(5));
-                        vmc5 = Integer.parseInt(response.toString().substring(6).trim());;
+                        //System.out.println("t2 es "+response.substring(5));
+                        vmc5 = Integer.parseInt(response.substring(6).trim());
                         break;
                     case "v16":
-                        //System.out.println("t2 es "+response.toString().substring(5));
-                        vmzm1 = Integer.parseInt(response.toString().substring(6).trim());;
+                        //System.out.println("t2 es "+response.substring(5));
+                        vmzm1 = Integer.parseInt(response.substring(6).trim());
                         break;
                     case "v17":
-                        //System.out.println("t2 es "+response.toString().substring(5));
-                        q1 = Integer.parseInt(response.toString().substring(6).trim());;
+                        //System.out.println("t2 es "+response.substring(5));
+                        q1 = Integer.parseInt(response.substring(6).trim());
                         break;
                 }
                 os.close();
@@ -288,7 +288,7 @@ public class HttpServerSalvador {
                     OutputStream os = t.getResponseBody();
                     FileInputStream fs = new FileInputStream(file);
                     final byte[] buffer = new byte[0x10000];
-                    int count = 0;
+                    int count;
                     while ((count = fs.read(buffer)) >= 0) {
                         os.write(buffer, 0, count);
                     }
@@ -347,7 +347,7 @@ public class HttpServerSalvador {
                                    int vmzm1, int q1){
 
         String T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, B1, B2, B3, B4, B5, V31, V32, V33, V34, V35, V36,
-        V37, V38, V39, VMA1, VMC1, VMC2, VMC3, VMC4, VMC5, VMZM1, Q1= null;
+        V37, V38, V39, VMA1, VMC1, VMC2, VMC3, VMC4, VMC5, VMZM1, Q1;
 
         if (t1>80){
             T1 = "<td bgcolor=\"#FF0000\">"+t1+"&deg;C</td>" ;
