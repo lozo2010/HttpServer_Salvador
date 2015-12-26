@@ -5,15 +5,16 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 import com.sun.org.apache.bcel.internal.generic.FLOAD;
+import sun.util.calendar.BaseCalendar;
 
+import javax.swing.*;
+import java.awt.event.ActionListener;
 import java.io.*;
+import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.URI;
 import java.net.URLDecoder;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class HttpServerSalvador {
 
@@ -57,12 +58,14 @@ public class HttpServerSalvador {
     public static void main(String[] args) {
 	// write your code here
         try {
+            //Date fecha = new Date();
             HttpServer server = HttpServer.create(new InetSocketAddress(9005), 0);
             server.createContext("/index", new indexHandler());
             server.createContext("/data", new GetData());
             server.createContext("/test.html", new FileHtml());
             server.setExecutor(null);
             server.start();
+            System.out.println("Server Start in port 9005 and ip: "+ InetAddress.getLocalHost().getHostAddress() +"\n"+ new Date());
         }catch (Exception e){
             System.out.println("Error: "+e);
         }
@@ -589,7 +592,7 @@ public class HttpServerSalvador {
                 "</head>\n" +
                 "<body>\n" +
                // "<div style=\"padding: 0px; float: left; width: 40%; text-align: justify;\">"+
-                "<H1>Temperaturas Tiempo Real </H1>"+
+                "<H1 align=\"center\"> Temperaturas Tiempo Real </H1>"+
                 "\n" +
                 "<table class=\"names\">\n" +
                 /*"  <tr>\n" +
@@ -617,7 +620,7 @@ public class HttpServerSalvador {
                 "\n" +
                 //"</div>"+
                 //"<div style=\"padding: 0px; float: right; width: 60%; text-align: justify;\">"+
-                "<H1>Estado bombas y valvulas</H1>"+
+                "<H1 align=\"center\" >Estado bombas y valvulas</H1>"+
                 "\n"+
                 //"<H3 float: center;>Energia Solar</H3>"+
                 "<table style=\"float: left; \"class=\"names\">" +
