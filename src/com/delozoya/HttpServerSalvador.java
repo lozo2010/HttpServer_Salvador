@@ -10,11 +10,10 @@ import sun.util.calendar.BaseCalendar;
 import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.io.*;
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
-import java.net.URI;
-import java.net.URLDecoder;
+import java.net.*;
+import java.security.MessageDigest;
 import java.util.*;
+import java.util.zip.Checksum;
 
 public class HttpServerSalvador {
 
@@ -55,8 +54,19 @@ public class HttpServerSalvador {
     static int vmzm1;
     static int q1;
 
+    public final static int SOCKET_PORT = 4444;      // you may change this
+
+    public final static int FILE_SIZE = 6022386; // file size temporary hard coded
+    // should bigger than the f
+    public final static String
+            FILE_TO_RECEIVED = "/home/david/ip.txt";  // you may change this, I give a
+    // different name because i don't want to
+    // overwrite the one used by server...
+
+
     public static void main(String[] args) {
 	// write your code here
+
         try {
             //Date fecha = new Date();
             HttpServer server = HttpServer.create(new InetSocketAddress(9005), 0);
@@ -66,10 +76,101 @@ public class HttpServerSalvador {
             server.setExecutor(null);
             server.start();
             System.out.println("Server Start in port 9005 and ip: "+ InetAddress.getLocalHost().getHostAddress() +"\n"+ new Date());
+            server();
+            //Checksum_data();
         }catch (Exception e){
             System.out.println("Error: "+e);
         }
     }
+
+    static void server() throws IOException {
+        System.out.println("**********Server Program**************");
+        int byteRead =0;
+
+
+            int bytesRead;
+            int current = 0;
+            int read = 0;
+            int totalRead = 0;
+
+            ServerSocket serverSocket = null;
+            serverSocket = new ServerSocket(4444);
+            if(!serverSocket.isBound())
+                System.out.println("Sever Socket not Bounded...");
+            else
+                System.out.println("Server Socket bounded to Port : "+serverSocket.getLocalPort());
+
+            //Socket clientSocket = serverSocket.accept();
+
+
+
+            while(true) {
+
+                 Socket clientSocket = null;
+                clientSocket = serverSocket.accept();
+                if(!clientSocket.isConnected())
+                    System.out.println("Client Socket not Connected...");
+                else
+                    System.out.println("Client Socket Connected : "+clientSocket.getInetAddress());
+                InputStream in = clientSocket.getInputStream();
+
+                DataInputStream clientData = new DataInputStream(in);
+
+                String fileName = clientData.readUTF();
+                OutputStream output = new FileOutputStream(fileName);
+                long size = clientData.readLong();
+                byte[] buffer = new byte[1024];
+                while (size > 0 && (bytesRead = clientData.read(buffer, 0, (int) Math.min(buffer.length, size))) != -1) {
+                    output.write(buffer, 0, bytesRead);
+                    size -= bytesRead;
+
+                    totalRead += bytesRead;
+                    //remaining -= read;
+                    // System.out.println("read " + totalRead + " bytes.");
+                }
+
+                // Sending the response back to the client.
+                ObjectOutputStream oos = new ObjectOutputStream(clientSocket.getOutputStream());
+                oos.flush();
+                oos.writeObject("ok");
+                System.out.println("Message sent to the client is " + "ok");
+
+                // Closing the FileOutputStream handle
+                output.close();
+
+
+            }
+
+    }
+
+
+
+    /*public static void filetranfer()  {
+        try {
+            ServerSocket server_socket = new ServerSocket(2233);
+            Socket socket = server_socket.accept();
+            FileOutputStream fos = new FileOutputStream(
+                    "/home/david/test51.db");
+            BufferedOutputStream out = new BufferedOutputStream(fos);
+            byte[] buffer = new byte[1024];
+            int count;
+            OutputStream os = socket.getOutputStream();
+            InputStream in = socket.getInputStream();
+            while((count=in.read(buffer)) >=0 ){
+                fos.write(buffer, 0, count);
+            }
+            fos.close();
+            System.out.println("test");
+            Resultant res = new Resultat(14);
+            ObjectOutputStream oos = new ObjectOutputStream(os);
+            oos.writeObject(res);
+            oos.close();
+            socket.close();
+        }catch (Exception e){
+            System.out.println("Error: "+e);
+        }
+    }*/
+
 
     static class indexHandler implements HttpHandler{
 
@@ -679,5 +780,35 @@ public class HttpServerSalvador {
                 "</body>\n" +
                 " <META HTTP-EQUIV=\"REFRESH\" CONTENT=\"5 ;URL=index\">"+
                 "</html>";
+    }
+
+    public static void Checksum_data(String file){
+        String route = "/home/david/";
+
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA1");
+            FileInputStream fis = new FileInputStream(route+file);
+            byte[] dataBytes = new byte[1024];
+
+            int nread = 0;
+
+            while ((nread = fis.read(dataBytes)) != -1) {
+                md.update(dataBytes, 0, nread);
+            }
+            ;
+
+            byte[] mdbytes = md.digest();
+
+            //convert the byte to hex format
+            StringBuffer sb = new StringBuffer("");
+            for (int i = 0; i < mdbytes.length; i++) {
+                sb.append(Integer.toString((mdbytes[i] & 0xff) + 0x100, 16).substring(1));
+            }
+
+            System.out.println("Digest(in hex format):: " + sb.toString());
+
+        }catch(Exception e){
+            System.out.println(e);
+        }
     }
 }
