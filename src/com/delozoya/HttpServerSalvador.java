@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import java.io.*;
 import java.net.*;
 import java.security.MessageDigest;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.zip.Checksum;
 
@@ -54,15 +55,6 @@ public class HttpServerSalvador {
     static int vmzm1;
     static int q1;
 
-    public final static int SOCKET_PORT = 4444;      // you may change this
-
-    public final static int FILE_SIZE = 6022386; // file size temporary hard coded
-    // should bigger than the f
-    public final static String
-            FILE_TO_RECEIVED = "/home/david/ip.txt";  // you may change this, I give a
-    // different name because i don't want to
-    // overwrite the one used by server...
-
 
     public static void main(String[] args) {
 	// write your code here
@@ -103,7 +95,6 @@ public class HttpServerSalvador {
             //Socket clientSocket = serverSocket.accept();
 
 
-
             while(true) {
 
                  Socket clientSocket = null;
@@ -133,7 +124,9 @@ public class HttpServerSalvador {
                 ObjectOutputStream oos = new ObjectOutputStream(clientSocket.getOutputStream());
                 oos.flush();
                 oos.writeObject("ok");
-                System.out.println("Message sent to the client is " + "ok");
+                Date fecha = new Date();
+                String fecha1 = new SimpleDateFormat("dd-MM-yyyy'-'HH:mm:ss").format(fecha);
+                System.out.println("Base de Datos recibida correctamente. "+ fecha1);
 
                 // Closing the FileOutputStream handle
                 output.close();
