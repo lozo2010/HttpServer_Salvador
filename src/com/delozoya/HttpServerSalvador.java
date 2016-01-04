@@ -745,8 +745,8 @@ public class HttpServerSalvador {
                 "<tr>"+
                 V38+
                 V36+
-                VMA1+
                 B2+
+                VMA1+
                 "</tr>"+
                 "<tr>"+
                 V37+
