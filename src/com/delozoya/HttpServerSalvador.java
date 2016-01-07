@@ -124,6 +124,12 @@ public class HttpServerSalvador {
                 ObjectOutputStream oos = new ObjectOutputStream(clientSocket.getOutputStream());
                 oos.flush();
                 oos.writeObject("ok");
+                System.out.println(fileName.substring(0,15));
+                if (fileName.substring(0,15).equals("InformeCalorias")){
+                   // System.out.println("Aqui");
+                    oos.flush();
+                    oos.writeObject("ok3");
+                }
                 Date fecha = new Date();
                 String fecha1 = new SimpleDateFormat("dd-MM-yyyy'-'HH:mm:ss").format(fecha);
                 System.out.println("Base de Datos recibida correctamente. "+ fecha1);
